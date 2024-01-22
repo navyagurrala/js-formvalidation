@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html>
+<head><title> login page</title>
+<link rel="stylesheet" href="login.css">
+<style>
+    body{
+        background-color: black;
+    }
+    label{
+        color: white;
+    }
+    h1,p{
+        color: white;
+    }
+    div{
+        border: 5px solid white;
+        margin: 20%;
+    }
+</style>
+</head>
+<body>
+    <center>
+<div>
+<h1>Login Form</h1>
+<form class="login-form" action="content.html" method="post" name="form" onsubmit="return validate()">
+<div1 class="field">
+<label><strong>Enter email:</strong></label>
+<input   class="lmail" type="text" placeholder="enter your email" required name="email address">
+</div1>
+<br>
+<br>
+<div2 class="field">
+<label><b>Enter password:</b></label>
+<input class="lpass"    type="password" placeholder="enter your password" required name="password">
+</div2>
+<br>
+<br>
+<div3 class="field">
+<button type="submit">login</button>
+<p>Don't have an account?<a href="#">register</a></p>
+</div3>
+
+<script>
+    let btn=document.getElementsByTagName("a")
+    btn[0].addEventListener("click",()=>{
+        window.location.assign("registration.html")
+    })
+
+    let btn2=document.getElementsByTagName("button")
+    btn2.addEventListener("click",()=>{
+        event.preventDefault();
+        let loginmail=document.getElementsByClassName("lmail").value
+        let loginpass=document.getElementsByClassName("lpass").value
+
+
+        let a=localStorage.getItem("regmail")
+        let aa=JSON.parse(a)
+
+        let b=localStorage.getItem("crtps")
+        let bb=JSON.parse(b)
+
+        if(loginmail===aa&&loginpass===bb){
+            alert("login successful!")
+        }
+        else{
+            alert("enter valid mail and padd")
+        }
+        // window.location.href="formvalidation.html"
+    })
+</script>
+</form>
+</div>
+</center>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <label for="">EMAIL ID:</label>
+    <input type="text" placeholder="enter your mail">
+    <br>
+    <label for="">PASSWORD</label>
+    <input type="password" placeholder="enter password">
+    <input type="submit" value="login">
+    <p>Don't have an account?<a href="#">register</a></p>
+</body>
+</html> -->

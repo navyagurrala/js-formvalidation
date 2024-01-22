@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <center>
+    <form action="">
+        <label for="">FIRST NAME:</label>
+<input class="username"   type="text" placeholder="ENTER YOUR FIRST NAME" >
+<BR>
+    <BR>
+        
+<label for="">LAST NAME:</label>
+<input class="username2" type="text" placeholder="ENTER YOUR LAST NAME" >
+<BR>
+    <BR>
+
+
+<label for="">EMAIL ID:</label>
+<input  class="usermail"  type="text" placeholder="ENTER YOUR EMAIL" >
+<BR>
+    <BR>
+
+<label for="">CREATE PASSWORD:</label>
+<input class="crpass"   type="password" >
+<BR>
+    <BR>
+
+<label for="">CONFIRM PASSWORD:</label>
+<input class="cfpass"   type="password" >
+<BR>
+    <BR>
+
+<label for="">MOBILE NUMBER:</label>
+<input class="num" type="number">
+<br>
+<br>
+<center><input class="btn" type="submit" value="submit" ></center>
+
+    </form>
+</center>
+    <script >
+
+// let a=[
+//     {user:"user",password:"pass",mai:"usermail"}
+// ]
+
+// function register(){
+//     let reguser=document.getElementsByClassName("username").value;
+//     let reguser2=document.getElementsByClassName("username2").value;
+//     let regmail=document.getElementsByClassName("usermail").value;
+//     let regpass=document.getElementsByClassName("crpass").value;
+//     let regpass2=document.getElementsByClassName("cfpass").value;
+//     let regnum=document.getElementsByClassName("num").value;
+//     if (regpass !== regpass2) {
+//                 alert("Passwords do not match");
+//                 return false;
+//             }
+
+// localStorage.get("reguser",JSON.stringify(username.value))
+// localStorage.getItem("regmail",JSON.stringify(usermail.val))
+// localStorage.getItem("regpass",JSON.stringify(crpass.value))
+
+// alert("registration successful!")
+// window.location.href="login.html"
+
+// return true;
+// a.push(
+//    { 
+//     reguser,regmail,regpass
+// }
+// );
+// alert("registration successful!")
+// }
+
+
+
+let fm=document.forms
+let a=[]
+fm[0].addEventListener("submit",(event)=>{
+    event.preventDefault();
+    var fstname=event.target[0].value
+            var lstnm=event.target[1].value
+            var mail=event.target[2].value
+            var crtps=event.target[3].value
+            var cnfmps=event.target[4].value
+            var num=event.target[5].value
+
+
+            localStorage.setItem("fstname",JSON.stringify(event.target[0].value))
+            localStorage.setItem("mail",JSON.stringify(event.target[2].value))
+            localStorage.setItem("crtps",JSON.stringify(event.target[3].value))
+
+            let obj={
+                fstname:event.target[0].value,
+                lstnm:event.target[1].value,
+                mail:event.target[2].value,
+                crtps:event.target[3].value,
+                cnfmps:event.target[4].value,
+                num:event.target[5].value
+            }
+             
+            a.push(obj)
+            console.log(a)
+            alert("registration successful!")
+            window.location.href="login.html"
+})
+
+    </script>
+</body>
+</html>
